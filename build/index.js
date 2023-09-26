@@ -14,7 +14,7 @@ import { createReadableStreamFromReadable } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
 import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
-import { jsx } from "react/jsx-runtime";
+import { jsxDEV } from "react/jsx-dev-runtime";
 var ABORT_DELAY = 5e3;
 function handleRequest(request, responseStatusCode, responseHeaders, remixContext, loadContext) {
   return isbot(request.headers.get("user-agent")) ? handleBotRequest(
@@ -32,13 +32,21 @@ function handleRequest(request, responseStatusCode, responseHeaders, remixContex
 function handleBotRequest(request, responseStatusCode, responseHeaders, remixContext) {
   return new Promise((resolve, reject) => {
     let shellRendered = !1, { pipe, abort } = renderToPipeableStream(
-      /* @__PURE__ */ jsx(
+      /* @__PURE__ */ jsxDEV(
         RemixServer,
         {
           context: remixContext,
           url: request.url,
           abortDelay: ABORT_DELAY
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "node_modules/@remix-run/dev/dist/config/defaults/entry.server.node.tsx",
+          lineNumber: 42,
+          columnNumber: 7
+        },
+        this
       ),
       {
         onAllReady() {
@@ -65,13 +73,21 @@ function handleBotRequest(request, responseStatusCode, responseHeaders, remixCon
 function handleBrowserRequest(request, responseStatusCode, responseHeaders, remixContext) {
   return new Promise((resolve, reject) => {
     let shellRendered = !1, { pipe, abort } = renderToPipeableStream(
-      /* @__PURE__ */ jsx(
+      /* @__PURE__ */ jsxDEV(
         RemixServer,
         {
           context: remixContext,
           url: request.url,
           abortDelay: ABORT_DELAY
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "node_modules/@remix-run/dev/dist/config/defaults/entry.server.node.tsx",
+          lineNumber: 92,
+          columnNumber: 7
+        },
+        this
       ),
       {
         onShellReady() {
@@ -107,33 +123,73 @@ import {
   Outlet,
   Scripts
 } from "@remix-run/react";
-import { jsx as jsx2, jsxs } from "react/jsx-runtime";
+import { jsxDEV as jsxDEV2 } from "react/jsx-dev-runtime";
 function App() {
-  return /* @__PURE__ */ jsxs("html", { children: [
-    /* @__PURE__ */ jsxs("head", { children: [
-      /* @__PURE__ */ jsx2(
+  return /* @__PURE__ */ jsxDEV2("html", { children: [
+    /* @__PURE__ */ jsxDEV2("head", { children: [
+      /* @__PURE__ */ jsxDEV2(
         "link",
         {
           rel: "icon",
           href: "data:image/x-icon;base64,AA"
-        }
+        },
+        void 0,
+        !1,
+        {
+          fileName: "app/root.jsx",
+          lineNumber: 12,
+          columnNumber: 9
+        },
+        this
       ),
-      /* @__PURE__ */ jsx2(Meta, {}),
-      /* @__PURE__ */ jsx2(Links, {})
-    ] }),
-    /* @__PURE__ */ jsxs("body", { children: [
-      /* @__PURE__ */ jsx2("h1", { children: "Hello world!" }),
-      /* @__PURE__ */ jsx2(Outlet, {}),
-      /* @__PURE__ */ jsx2(Scripts, {})
-    ] })
-  ] });
+      /* @__PURE__ */ jsxDEV2(Meta, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 16,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(Links, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 17,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.jsx",
+      lineNumber: 11,
+      columnNumber: 7
+    }, this),
+    /* @__PURE__ */ jsxDEV2("body", { children: [
+      /* @__PURE__ */ jsxDEV2("h1", { children: "Hello world!" }, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 20,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(Outlet, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 21,
+        columnNumber: 9
+      }, this),
+      /* @__PURE__ */ jsxDEV2(Scripts, {}, void 0, !1, {
+        fileName: "app/root.jsx",
+        lineNumber: 23,
+        columnNumber: 9
+      }, this)
+    ] }, void 0, !0, {
+      fileName: "app/root.jsx",
+      lineNumber: 19,
+      columnNumber: 7
+    }, this)
+  ] }, void 0, !0, {
+    fileName: "app/root.jsx",
+    lineNumber: 10,
+    columnNumber: 5
+  }, this);
 }
 
 // server-assets-manifest:@remix-run/dev/assets-manifest
-var assets_manifest_default = { entry: { module: "/build/entry.client-4VJJ4F7N.js", imports: ["/build/_shared/chunk-6UGNP7YH.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-WLGNO3XP.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "7ca3fc30", hmr: void 0, url: "/build/manifest-7CA3FC30.js" };
+var assets_manifest_default = { entry: { module: "/build/entry.client-5DP457MJ.js", imports: ["/build/_shared/chunk-ZWGWGGVF.js", "/build/_shared/chunk-XU7DNSPJ.js", "/build/_shared/chunk-J5XH6O4L.js", "/build/_shared/chunk-2XBI3TT7.js", "/build/_shared/chunk-UWV35TSL.js", "/build/_shared/chunk-GIAAE3CH.js", "/build/_shared/chunk-BOXFZXVX.js", "/build/_shared/chunk-PNG5AS42.js"] }, routes: { root: { id: "root", parentId: void 0, path: "", index: void 0, caseSensitive: void 0, module: "/build/root-TSQYGSYV.js", imports: void 0, hasAction: !1, hasLoader: !1, hasErrorBoundary: !1 } }, version: "7ecc226f", hmr: { runtime: "/build/_shared\\chunk-2XBI3TT7.js", timestamp: 1695718743899 }, url: "/build/manifest-7ECC226F.js" };
 
 // server-entry-module:@remix-run/dev/server-build
-var mode = "production", assetsBuildDirectory = "public\\build", future = {}, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
+var mode = "development", assetsBuildDirectory = "public\\build", future = {}, publicPath = "/build/", entry = { module: entry_server_node_exports }, routes = {
   root: {
     id: "root",
     parentId: void 0,
@@ -152,3 +208,4 @@ export {
   publicPath,
   routes
 };
+//# sourceMappingURL=index.js.map

@@ -1,1 +1,0 @@
-window.__remixManifest={"entry":{"module":"/build/entry.client-4VJJ4F7N.js","imports":["/build/_shared/chunk-6UGNP7YH.js"]},"routes":{"root":{"id":"root","path":"","module":"/build/root-WLGNO3XP.js","hasAction":false,"hasLoader":false,"hasErrorBoundary":false}},"version":"7ca3fc30","url":"/build/manifest-7CA3FC30.js"};
